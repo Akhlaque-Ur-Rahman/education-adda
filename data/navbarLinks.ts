@@ -1,11 +1,9 @@
-import { Home, BookOpen, Store, ClipboardList, Users, Info, Phone } from "lucide-react";
-
 export const navbarLinks = [
-  { label: "Home", href: "/", icon: Home },
-  { label: "Courses", href: "/courses", icon: BookOpen },
-  { label: "Stores", href: "/stores", icon: Store },
-  { label: "Test-Series", href: "/test-series", icon: ClipboardList },
-  { label: "Community", href: "/community", icon: Users },
-  { label: "About", href: "/about", icon: Info },
-  { label: "Contact", href: "/contact", icon: Phone },
+  { label: "Home", href: "/" },
+  { label: "Courses", href: "/courses" },
+  { label: "Stores", href: "/stores" },
+  { label: "Test-Series", href: "/test-series" },
+  { label: "Community", href: "/community" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
