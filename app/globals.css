@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+*{
+  box-sizing: border-box;
+}
+:root{
+  --text-primary: #FF0000;
+
+}
+body{
+  font-family: --font-roboto-serif;
+  
+}
+  
+
