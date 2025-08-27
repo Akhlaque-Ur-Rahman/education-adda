@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X, Headphones } from "lucide-react";
+import { Menu, X, Headphones, MoveRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { navbarLinks } from "@/data/navbarLinks";
@@ -10,7 +10,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="navbar flex items-center justify-between gap-4 px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-32 py-4 sm:py-5 bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+    <nav className="navbar flex items-center justify-between gap-4 px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-[120px] py-4 sm:py-5 bg-white  fixed top-0 left-0 right-0 z-50">
       {/* Logo */}
       <div className="logo flex items-center gap-2 flex-shrink-0">
         <img
@@ -41,12 +41,16 @@ export default function Navbar() {
         <Headphones size={24} className="text-[#40566D] hidden xl:block" />
         <Link
           href="/loginSignup"
-          className="relative group inline-block text-white px-4 py-2 text-sm xl:px-5 xl:py-2 xl:text-base rounded overflow-hidden bg-gradient-to-r from-red-500 via-red-800 to-black whitespace-nowrap"
-        >
-          <span
-            className="absolute inset-0 -translate-x-full transform -skew-x-12 bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-500 group-hover:translate-x-full"
-          ></span>
-          <span className="relative">Login | Signup</span>
+          className=" text-white font-semibold text-[14px] px-4 py-2 text-sm xl:px-[25px] xl:py-[8.5px] rounded-[15px] bg-[#FF0000]">
+            Login
+        </Link>
+        <Link
+          href="/loginSignup"
+          className=" text-white flex items-center text-[14px] font-semibold px-4 py-2 text-sm xl:px-[20px] xl:py-[8.5px] rounded-[15px] bg-[#FF0000] gap-[5px]">
+            Signup
+            <span>
+              <MoveRight size={16} />
+            </span>
         </Link>
       </div>
 
@@ -85,14 +89,20 @@ export default function Navbar() {
               ))}
             </div>
             
-            <div className="p-6 border-t border-gray-700/50">
+            <div className="p-6 border-t border-gray-700/50 flex items-center justify-between gap-4 w-full">
               <Link
-                href="/loginSignup"
-                onClick={() => setIsOpen(false)}
-                className="block w-full text-white text-center text-lg px-5 py-3 font-medium rounded-lg overflow-hidden bg-gradient-to-r from-red-500 via-red-800 to-black"
-              >
-                Login | Signup
-              </Link>
+          href="/loginSignup"
+          className=" text-white text-center flex-1 font-semibold text-[14px] px-4 py-2 text-sm xl:px-[25px] xl:py-[8.5px] rounded-[15px] bg-[#FF0000]">
+            Login
+        </Link>
+        <Link
+          href="/loginSignup"
+          className=" text-white flex flex-1 items-center justify-center text-[14px] font-semibold px-4 py-2 text-sm xl:px-[20px] xl:py-[8.5px] rounded-[15px] bg-[#FF0000] gap-[5px]">
+            Signup
+            <span>
+              <MoveRight size={16} />
+            </span>
+        </Link>
             </div>
           </motion.div>
         )}
