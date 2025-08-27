@@ -1,11 +1,12 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, MoveRight } from 'lucide-react';
+import { MoveRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { heroSlides } from "@/data/heroSection";
 
 
-const heroSection = () => {
+const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -62,10 +63,12 @@ const heroSection = () => {
               {/* Person Image with Enhanced Styling */}
               <div className="relative z-10 flex flex-col items-center"> 
                 <div className="image-wrapper w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 overflow-hidden relative"> 
-                  <img 
+                  <Image 
                     src={heroSlides[0].personImage} 
                     alt="mentor" 
+                    fill
                     className="w-full h-full object-cover" 
+                    sizes="(max-width: 768px) 192px, (max-width: 1024px) 256px, 320px"
                   /> 
                   {/* Person Name Overlay */}
                   <div className="absolute bottom-0 right-0">
@@ -85,4 +88,4 @@ const heroSection = () => {
   )
 }
 
-export default heroSection
+export default HeroSection

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Menu, X, Headphones, MoveRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { navbarLinks } from "@/data/navbarLinks";
 
 export default function Navbar() {
@@ -13,10 +14,13 @@ export default function Navbar() {
     <nav className="navbar flex items-center justify-between gap-4 px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-[120px] py-4 sm:py-5 bg-white  fixed top-0 left-0 right-0 z-50">
       {/* Logo */}
       <div className="logo flex items-center gap-2 flex-shrink-0">
-        <img
+        <Image
           src="/logo/Brand-Logo.png"
           alt="Education Adda Logo"
+          width={120}
+          height={32}
           className="h-7 sm:h-8 w-auto"
+          priority
         />
         <p className="font-bold text-lg sm:text-xl text-text-primary hidden sm:block">EDUCATION ADDA</p>
       </div>
