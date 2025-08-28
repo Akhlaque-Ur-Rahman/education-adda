@@ -1,10 +1,22 @@
 import type { Metadata } from "next";
-import { Roboto_Serif} from "next/font/google";
+import { Roboto_Serif, Caveat, Cedarville_Cursive } from "next/font/google";
 import "./globals.css";
 
 const robotoSerif = Roboto_Serif({
   subsets: ["latin"],
   variable: "--font-roboto-serif",
+});
+
+const caveat = Caveat({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-caveat',
+});
+
+const cedarvilleCursive = Cedarville_Cursive({
+  subsets: ['latin'],
+  weight: '400', // Cedarville Cursive has only 400
+  variable: '--font-cedarville-cursive',
 });
 
 export const metadata: Metadata = {
@@ -18,10 +30,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${robotoSerif.variable} ${cedarvilleCursive.variable}`}>
       <body
-        className={`${robotoSerif.variable} font-sans`}
-      >
+        className="font-roboto-serif">
         {children}
       </body>
     </html>

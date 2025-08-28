@@ -3,13 +3,30 @@
 *{
   box-sizing: border-box;
 }
-:root{
-  --text-primary: #FF0000;
-
+:root {
+  --font-roboto-serif: 'Roboto Serif', serif;
+  --font-caveat: 'Caveat', cursive;
+  --font-cedarville-cursive: 'Cedarville Cursive', cursive;
 }
-body{
-  font-family: --font-roboto-serif;
+
+.font-roboto-serif {
+  font-family: var(--font-roboto-serif);
+}
+
+.font-caveat {
+  font-family: var(--font-caveat);
+}
+
+.font-cedarville-cursive {
+  font-family: var(--font-cedarville-cursive);
+}
+
+.slide-right-content-container{
+  background-image: url("/svg/geometric-patter-1.svg");
   
+  background-size: conver;
+  background-position: center;
+  background-repeat: no-repeat;
 }
   
 

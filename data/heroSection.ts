@@ -7,6 +7,10 @@ export interface SlideData {
   secondaryText: string;
   personName: string;
   personImage: string;
+  personPos: string;
+  personProdtext: string;
+  personProdImage: string;
+  personPower : string;
   accentColor: 'red' | 'blue' | 'green' | 'purple' | 'orange';
 }
 
@@ -20,6 +24,10 @@ export const heroSlides: SlideData[] = [
     secondaryText: "Know More",
     personName: "Shadab Perwez",
     personImage: "/images/Shadab.png",
+    personPos: "Founder & CEO",
+    personProdtext: "Education Adda",
+    personProdImage: "/images/Shadab.png",
+    personPower: "1000+ Students",
     accentColor: "red"
   },
   {
@@ -30,7 +38,11 @@ export const heroSlides: SlideData[] = [
     ctaText: "Get Started",
     secondaryText: "Learn More",
     personName: "Expert Mentor",
-    personImage: "/data/images/teacher-1.png",
+    personImage: "/images/teacher-1.png",
+    personPos: "Founder & CEO",
+    personProdtext: "Education Adda",
+    personProdImage: "/images/Shadab.png",
+    personPower: "1000+ Students",
     accentColor: "blue"
   }
 ];

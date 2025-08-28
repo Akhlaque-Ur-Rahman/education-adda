@@ -45,7 +45,7 @@ export default function Navbar() {
         <Headphones size={24} className="text-[#40566D] hidden xl:block" />
         <Link
           href="/loginSignup"
-          className=" text-white font-semibold text-[14px] px-4 py-2 text-sm xl:px-[25px] xl:py-[8.5px] rounded-[15px] bg-[#FF0000]">
+          className=" text-[#FF0000] font-semibold text-[14px] px-4 py-2 text-sm xl:px-[25px] xl:py-[8.5px] rounded-[15px] border-1 border-[#FF0000]">
             Login
         </Link>
         <Link
