@@ -8,7 +8,7 @@ export interface SlideData {
   personName: string;
   personImage: string;
   personPos: string;
-  personProdtext: string;
+  personProdText: string;
   personProdImage: string;
   personPower : string;
   accentColor: 'red' | 'blue' | 'green' | 'purple' | 'orange';
@@ -25,7 +25,7 @@ export const heroSlides: SlideData[] = [
     personName: "Shadab Perwez",
     personImage: "/images/Shadab.png",
     personPos: "Founder & CEO",
-    personProdtext: "Education Adda",
+    personProdText: "Payment",
     personProdImage: "/images/Shadab.png",
     personPower: "1000+ Students",
     accentColor: "red"
@@ -38,9 +38,9 @@ export const heroSlides: SlideData[] = [
     ctaText: "Get Started",
     secondaryText: "Learn More",
     personName: "Expert Mentor",
-    personImage: "/images/teacher-1.png",
+    personImage: "/images/Shadab.png",
     personPos: "Founder & CEO",
-    personProdtext: "Education Adda",
+    personProdText: "Payroll",
     personProdImage: "/images/Shadab.png",
     personPower: "1000+ Students",
     accentColor: "blue"

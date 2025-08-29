@@ -23,10 +23,10 @@
 
 .slide-right-content-container{
   background-image: url("/svg/geometric-patter-1.svg");
-  
-  background-size: conver;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  
 }
   
 

@@ -26,7 +26,7 @@ export default function Navbar() {
       </div>
 
       {/* Desktop Navigation */}
-      <div className="hidden lg:flex items-center flex-1 justify-center">
+      <div className="hidden xl:flex items-center flex-1 justify-center">
         <div className="flex items-center space-x-1 xl:space-x-2 mr-auto">
           {navbarLinks.map((link, idx) => (
             <Link
@@ -41,7 +41,7 @@ export default function Navbar() {
         </div>
       </div>
       
-      <div className="hidden lg:flex items-center gap-4 xl:gap-6">
+      <div className="hidden xl:flex items-center gap-4 xl:gap-6">
         <Headphones size={24} className="text-[#40566D] hidden xl:block" />
         <Link
           href="/loginSignup"
@@ -50,7 +50,7 @@ export default function Navbar() {
         </Link>
         <Link
           href="/loginSignup"
-          className=" text-white flex items-center text-[14px] font-semibold px-4 py-2 text-sm xl:px-[20px] xl:py-[8.5px] rounded-[15px] bg-[#FF0000] gap-[5px]">
+          className=" text-white flex items-center text-[14px] font-semibold px-4 py-2 text-sm xl:px-[20px]  xl:py-[8.5px] rounded-[15px] bg-[#FF0000] gap-[5px]">
             Signup
             <span>
               <MoveRight size={16} />
@@ -59,7 +59,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu Button */}
-      <div className="lg:hidden flex items-center gap-3">
+      <div className="xl:hidden flex items-center gap-3">
         <Headphones size={20} className="text-[#40566D]" />
         <button 
           onClick={() => setIsOpen(!isOpen)} 
