@@ -22,16 +22,16 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-full h-full overflow-hidden">
+    <section className="relative w-full h-full overflow-hidden ">
       {/* Slides wrapper */}
       <div
-        className="flex w-full h-full items-center  transition-transform duration-700 ease-in-out"
+        className="flex w-full h-full items-center  transition-transform duration-700 ease-in-out "
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {heroSlides.map((slide) => (
           <div
             key={slide.id}
-            className="flex flex-col justify-center lg:flex-row w-full flex-shrink-0 px-4 sm:px-8 lg:px-32 py-8 sm:py-10 lg:py-16 lg:items-center h-full"
+            className="flex flex-col justify-center lg:flex-row w-full flex-shrink-0 px-4 sm:px-8 lg:px-32 py-8 sm:py-10 lg:py-32 lg:items-center h-full "
           >
             {/* Left content */}
             <div className="flex flex-col items-center lg:items-start justify-center gap-1 lg:space-y-6 text-center lg:text-left w-full lg:w-1/2 h-1/2">
@@ -78,7 +78,7 @@ const HeroSection = () => {
 
                 {/* Product Card (always half of image width) */}
                 <div className="absolute top-1/2 left-1/2 flex justify-center items-center h-full w-full -translate-x-1/2 -translate-y-1/2 z-0 ">
-                  <div className="bg-gray-700 flex flex-col items-center justify-between rounded-md overflow-hidden shadow-lg h-4/7 w-1/6 sm:h-3/5 sm:w-1/6  md:w-1/6 lg:w-1/3 lg:h-2/4">
+                  <div className="bg-gray-700 flex flex-col items-center justify-between rounded-md overflow-hidden shadow-lg h-4/7 w-1/6 sm:h-3/5 sm:w-1/6  md:w-1/6 lg:w-1/3 lg:h-3/5 ">
                     <div className="px-2 sm:px-3 py-1.5 sm:py-2 shrink-0 grow-0">
                       <h1 className="text-white font-bold text-center text-[clamp(0.6rem,1.4vw,1.1rem)]">
                         {slide.personProdText}

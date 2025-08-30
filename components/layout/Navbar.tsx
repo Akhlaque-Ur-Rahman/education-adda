@@ -41,7 +41,7 @@ export default function Navbar() {
         </div>
       </div>
       
-      <div className="hidden xl:flex items-center gap-4 xl:gap-6">
+      <div className="hidden xl:flex items-center gap-4 xl:gap-3">
         <Headphones size={24} className="text-[#40566D] hidden xl:block" />
         <Link
           href="/loginSignup"
