@@ -22,20 +22,20 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-full h-full overflow-hidden ">
+    <section className="overflow-hidden relative top-[100px]">
       {/* Slides wrapper */}
       <div
-        className="flex w-full h-full items-center  transition-transform duration-700 ease-in-out "
+        className="flex transition-transform duration-700 ease-in-out container-1"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {heroSlides.map((slide) => (
           <div
             key={slide.id}
-            className="flex flex-col justify-center lg:flex-row w-full flex-shrink-0 px-4 sm:px-8 lg:px-32 py-8 sm:py-10 lg:py-32 lg:items-center h-full "
+            className="flex flex-col justify-center lg:flex-row w-full flex-shrink-0 px-4 sm:px-8 lg:px-[60px] py-8 sm:py-10 lg:py-0 lg:items-center   conatainer-2 "
           >
             {/* Left content */}
             <div className="flex flex-col items-center lg:items-start justify-center gap-1 lg:space-y-6 text-center lg:text-left w-full lg:w-1/2 h-1/2">
-              <h1 className="font-bold text-[#FF0000] text-[clamp(1.5rem,4vw,3rem)]">
+              <h1 className="font-bold text-[#FF0000] text-[clamp(1.5rem,4vw,2.5rem)]">
                 {slide.title}
               </h1>
               <h2 className="text-[#192839] text-[clamp(1rem,2.5vw,2rem)]">

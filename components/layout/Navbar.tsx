@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X, Headphones, MoveRight } from "lucide-react";
+import { Menu, X, Headphones, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,18 +11,18 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="navbar flex items-center justify-between gap-4 px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-[120px] py-4 sm:py-5 bg-white  fixed top-0 left-0 right-0 z-50">
+    <nav className="navbar flex items-center justify-between gap-4 xl:gap-6 px-4 sm:px-6  xl:px-16 xl:py-6 2xl:px-[120px] py-4 sm:py-5 fixed top-0 left-0 right-0 z-50">
       {/* Logo */}
       <div className="logo flex items-center gap-2 flex-shrink-0">
         <Image
           src="/logo/Brand-Logo.png"
           alt="Education Adda Logo"
-          width={120}
+          width={32}
           height={32}
           className="h-7 sm:h-8 w-auto"
           priority
         />
-        <p className="font-bold text-lg sm:text-xl text-text-primary hidden sm:block">EDUCATION ADDA</p>
+        <p className="font-extrabold text-lg sm:text-xl text-[#192839] italic hidden sm:block">EDUCATION ADDA</p>
       </div>
 
       {/* Desktop Navigation */}
@@ -32,7 +32,7 @@ export default function Navbar() {
             <Link
               key={idx}
               href={link.href}
-              className="relative px-3 py-2 text-gray-600 hover:text-red-600 text-sm xl:text-base group whitespace-nowrap"
+              className="relative px-3 py-2 text-gray-600 hover:text-red-600 text-sm  group whitespace-nowrap"
             >
               {link.label}
               <span className="absolute left-0 bottom-0 w-full h-1 bg-red-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 rounded-b-full"></span>
@@ -41,19 +41,19 @@ export default function Navbar() {
         </div>
       </div>
       
-      <div className="hidden xl:flex items-center gap-4 xl:gap-3">
+      <div className="hidden xl:flex items-center gap-4 xl:gap-6">
         <Headphones size={24} className="text-[#40566D] hidden xl:block" />
         <Link
           href="/loginSignup"
-          className=" text-[#FF0000] font-semibold text-[14px] px-4 py-2 text-sm xl:px-[25px] xl:py-[8.5px] rounded-[15px] border-1 border-[#FF0000]">
+          className=" text-[#FF0000] font-semibold text-[14px] px-4 py-2 text-sm xl:px-[24px] xl:py-[12px] rounded-[16px] border-1 border-[#FF0000]">
             Login
         </Link>
         <Link
           href="/loginSignup"
-          className=" text-white flex items-center text-[14px] font-semibold px-4 py-2 text-sm xl:px-[20px]  xl:py-[8.5px] rounded-[15px] bg-[#FF0000] gap-[5px]">
+          className=" text-white flex items-center text-[14px] font-semibold px-4 py-2 text-sm xl:px-[24px] xl:py-[12px] rounded-[16px] bg-[#FF0000] gap-[8px]">
             Signup
             <span>
-              <MoveRight size={16} />
+              <ArrowRight size={16} />
             </span>
         </Link>
       </div>
@@ -104,7 +104,7 @@ export default function Navbar() {
           className=" text-white flex flex-1 items-center justify-center text-[14px] font-semibold px-4 py-2 text-sm xl:px-[20px] xl:py-[8.5px] rounded-[15px] bg-[#FF0000] gap-[5px]">
             Signup
             <span>
-              <MoveRight size={16} />
+              <ArrowRight size={16} />
             </span>
         </Link>
             </div>
