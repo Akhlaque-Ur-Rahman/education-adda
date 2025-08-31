@@ -6,7 +6,7 @@ import React from 'react'
 const Home = () => {
   return (
     <div>
-      <div className='flex flex-col'>
+      <div className='flex flex-col bg-[#F1F1F1]'>
       <Navbar />
       <HeroSection/>
       </div>
