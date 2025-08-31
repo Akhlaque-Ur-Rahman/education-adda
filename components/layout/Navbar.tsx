@@ -11,7 +11,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="navbar flex items-center justify-between gap-4 xl:gap-6 px-4 sm:px-6  xl:px-16 xl:py-6 2xl:px-[120px] py-4 sm:py-5 fixed top-0 left-0 right-0 z-50">
+    <nav className="navbar flex items-center justify-between gap-4 xl:gap-6 px-4 sm:px-6  xl:px-16 xl:py-6 2xl:px-[120px] py-4 sm:py-5 z-50">
       {/* Logo */}
       <div className="logo flex items-center gap-2 flex-shrink-0">
         <Image
@@ -61,56 +61,71 @@ export default function Navbar() {
       {/* Mobile Menu Button */}
       <div className="xl:hidden flex items-center gap-3">
         <Headphones size={20} className="text-[#40566D]" />
-        <button 
-          onClick={() => setIsOpen(!isOpen)} 
-          className="flex items-center p-2 hover:bg-gray-100 rounded-lg transition-colors"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <button
+  onClick={() => setIsOpen(true)}
+  className="flex items-center p-2 hover:bg-gray-100 rounded-lg transition-colors"
+  aria-label="Open menu"
+>
+  <Menu size={24} />
+</button>
+
       </div>
 
       {/* Mobile Drawer */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
-            className="absolute top-full right-0 w-full max-w-xs h-[calc(100vh-100%)] bg-[#192839] shadow-xl z-50 flex flex-col"
+<AnimatePresence>
+  {isOpen && (
+    <motion.div
+      initial={{ x: "100%" }}
+      animate={{ x: 0 }}
+      exit={{ x: "100%" }}
+      transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
+      className="fixed top-0 right-0 h-screen w-full max-w-xs bg-[#192839] shadow-xl z-[9999] flex flex-col"
+    >
+      {/* Close button inside drawer */}
+      <div className="flex justify-end px-4 py-4">
+        <button
+          onClick={() => setIsOpen(false)}
+          className="p-2 rounded-md hover:bg-white/10 transition-colors"
+          aria-label="Close menu"
+        >
+          <X size={24} className="text-white" />
+        </button>
+      </div>
+
+      {/* Nav links */}
+      <div className="overflow-y-auto">
+        {navbarLinks.map((link, idx) => (
+          <Link
+            key={idx}
+            href={link.href}
+            onClick={() => setIsOpen(false)}
+            className="block text-white text-lg hover:bg-blue-600/20 transition-colors px-6 py-3 font-medium border-b border-gray-700/50 last:border-b-0"
           >
-            <div className="flex-1 overflow-y-auto py-4">
-              {navbarLinks.map((link, idx) => (
-                <Link
-                  key={idx}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block text-white text-lg hover:bg-blue-600/20 transition-colors px-6 py-3 font-medium border-b border-gray-700/50 last:border-b-0"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-            
-            <div className="p-6 border-t border-gray-700/50 flex items-center justify-between gap-4 w-full">
-              <Link
+            {link.label}
+          </Link>
+        ))}
+      </div>
+
+      {/* Bottom buttons */}
+      <div className="p-6 border-t border-gray-700/50 flex items-center justify-between gap-4 ">
+        <Link
           href="/loginSignup"
-          className=" text-white text-center flex-1 font-semibold text-[14px] px-4 py-2 text-sm xl:px-[25px] xl:py-[8.5px] rounded-[15px] bg-[#FF0000]">
-            Login
+          className="text-white text-center flex-1 font-semibold text-[14px] px-4 py-2 rounded-[15px] bg-[#FF0000]"
+        >
+          Login
         </Link>
         <Link
           href="/loginSignup"
-          className=" text-white flex flex-1 items-center justify-center text-[14px] font-semibold px-4 py-2 text-sm xl:px-[20px] xl:py-[8.5px] rounded-[15px] bg-[#FF0000] gap-[5px]">
-            Signup
-            <span>
-              <ArrowRight size={16} />
-            </span>
+          className="text-white flex flex-1 items-center justify-center text-[14px] font-semibold px-4 py-2 rounded-[15px] bg-[#FF0000] gap-[5px]"
+        >
+          Signup
+          <ArrowRight size={16} />
         </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
     </nav>
   );
 }

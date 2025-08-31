@@ -7,34 +7,28 @@ import { heroSlides } from "@/data/heroSection";
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // ✅ Next function (loops forward)
   const showNextSlide = () => {
-    setCurrentIndex((index) =>
-      index === heroSlides.length - 1 ? 0 : index + 1
-    );
+    setCurrentIndex((i) => (i === heroSlides.length - 1 ? 0 : i + 1));
   };
 
-  // ✅ Prev function (loops backward)
   const showPrevSlide = () => {
-    setCurrentIndex((index) =>
-      index === 0 ? heroSlides.length - 1 : index - 1
-    );
+    setCurrentIndex((i) => (i === 0 ? heroSlides.length - 1 : i - 1));
   };
 
   return (
-    <section className="overflow-hidden relative top-[100px]">
+    <section className="relative overflow-hidden">
       {/* Slides wrapper */}
       <div
-        className="flex transition-transform duration-700 ease-in-out container-1"
+        className="flex transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {heroSlides.map((slide) => (
           <div
             key={slide.id}
-            className="flex flex-col justify-center lg:flex-row w-full flex-shrink-0 px-4 sm:px-8 lg:px-[60px] py-8 sm:py-10 lg:py-0 lg:items-center   conatainer-2 "
+            className="flex flex-col lg:flex-row w-full flex-shrink-0 px-4 sm:px-8 lg:px-[60px] 2xl:px-[120px] py-8 sm:py-10 lg:py-0 lg:items-center"
           >
             {/* Left content */}
-            <div className="flex flex-col items-center lg:items-start justify-center gap-1 lg:space-y-6 text-center lg:text-left w-full lg:w-1/2 h-1/2">
+            <div className="flex flex-col items-center lg:items-start justify-start gap-2 lg:gap-6 text-center lg:text-left w-full lg:w-1/2">
               <h1 className="font-bold text-[#FF0000] text-[clamp(1.5rem,4vw,2.5rem)]">
                 {slide.title}
               </h1>
@@ -58,8 +52,8 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* Right content (Image + Product card + SVG) */}
-            <div className="relative h-1/3 flex-1  lg:h-full  lg:w-1/2 mt-6 lg:mt-0 ">
+            {/* Right content (flex always) */}
+            <div className="relative flex justify-center items-center w-full lg:w-1/2 mt-6 lg:mt-0">
               {/* SVG Background */}
               <img
                 src="/svg/geometric-patter-1.svg"
@@ -67,30 +61,31 @@ const HeroSection = () => {
                 className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
               />
 
-              {/* Person + Product Card */}
-              <div className="flex justify-center items-end h-full w-full overflow-hidden lg:overflow-visible">
+              {/* Person + Product card wrapper */}
+              <div className="relative flex items-end gap-4">
                 {/* Person Image */}
                 <img
                   src={slide.personImage}
                   alt={slide.personName}
-                  className="relative z-10  lg:h-8/10 md:h-full xl:h-9/10 sm:h-full h-9/10 object-contain -left-1/7 lg:-left-1/3"
+                  className="relative z-10 w-[clamp(9rem,22vw,16rem)] object-contain"
                 />
 
-                {/* Product Card (always half of image width) */}
-                <div className="absolute top-1/2 left-1/2 flex justify-center items-center h-full w-full -translate-x-1/2 -translate-y-1/2 z-0 ">
-                  <div className="bg-gray-700 flex flex-col items-center justify-between rounded-md overflow-hidden shadow-lg h-4/7 w-1/6 sm:h-3/5 sm:w-1/6  md:w-1/6 lg:w-1/3 lg:h-3/5 ">
-                    <div className="px-2 sm:px-3 py-1.5 sm:py-2 shrink-0 grow-0">
-                      <h1 className="text-white font-bold text-center text-[clamp(0.6rem,1.4vw,1.1rem)]">
-                        {slide.personProdText}
-                      </h1>
-                      <p className="text-white text-[clamp(0.4rem,.95vw,0.85rem)]">
-                        POWERS{" "}
-                        <span className="font-medium">{slide.personPower}</span>
-                      </p>
-                    </div>
-                    <div className="bg-[url('/svg/image-placeholder.svg')] bg-center bg-no-repeat bg-cover flex-1 w-full h-full">
-                    </div>
-
+                {/* Product Card */}
+                <div className="relative z-20 w-[clamp(8rem,20vw,14rem)] aspect-[4/5] bg-gray-700 rounded-md overflow-hidden shadow-lg flex flex-col justify-between">
+                  <div className="px-2 sm:px-3 py-2">
+                    <h1 className="text-white font-bold text-center text-[clamp(0.6rem,1.4vw,1.1rem)]">
+                      {slide.personProdText}
+                    </h1>
+                    <p className="text-white text-[clamp(0.4rem,1vw,0.9rem)]">
+                      POWERS <span className="font-medium">{slide.personPower}</span>
+                    </p>
+                  </div>
+                  <div className="bg-white flex-1 flex justify-center items-center">
+                    <img
+                      src="/svg/image-placeholder.svg"
+                      alt="placeholder"
+                      className="w-2/3"
+                    />
                   </div>
                 </div>
               </div>

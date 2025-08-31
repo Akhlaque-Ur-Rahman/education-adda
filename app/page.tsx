@@ -6,7 +6,7 @@ import React from 'react'
 const Home = () => {
   return (
     <div>
-      <div className='flex flex-col gap-6 max-h-[520px] items-center justify-center'>
+      <div className='flex flex-col'>
       <Navbar />
       <HeroSection/>
       </div>
