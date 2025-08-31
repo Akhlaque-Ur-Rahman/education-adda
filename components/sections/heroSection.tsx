@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { ChevronLeft, ChevronRight, MoveRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { heroSlides } from "@/data/heroSection";
 
@@ -80,7 +80,7 @@ const HeroSection = () => {
                   className="bg-red-600 text-white flex items-center font-semibold px-4 py-2 sm:px-5 sm:py-2.5 lg:px-6 lg:py-3 rounded-[15px] gap-2 hover:bg-red-700 transition-colors duration-300 text-[clamp(0.85rem,2vw,1rem)]"
                 >
                   {slide.ctaText}
-                  <MoveRight size={16} />
+                  <ArrowRight size={16} />
                 </Link>
                 <button className="text-[#FF0000] hover:text-red-600 transition-colors duration-300 text-[clamp(0.85rem,2vw,1rem)]">
                   {slide.secondaryText}
