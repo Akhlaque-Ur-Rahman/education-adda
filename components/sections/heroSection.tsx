@@ -62,7 +62,7 @@ const HeroSection = () => {
               />
 
               {/* Person + Product card wrapper */}
-              <div className="relative flex items-end gap-4">
+              <div className="relative flex items-end -space-x-8">
                 {/* Person Image */}
                 <img
                   src={slide.personImage}
@@ -71,7 +71,7 @@ const HeroSection = () => {
                 />
 
                 {/* Product Card */}
-                <div className="relative z-20 w-[clamp(8rem,20vw,14rem)] aspect-[4/5] bg-gray-700 rounded-md overflow-hidden shadow-lg flex flex-col justify-between">
+                <div className="relative w-[clamp(8rem,20vw,14rem)] aspect-[4/5] bg-gray-700 rounded-md overflow-hidden shadow-lg flex flex-col justify-between z-1">
                   <div className="px-2 sm:px-3 py-2">
                     <h1 className="text-white font-bold text-center text-[clamp(0.6rem,1.4vw,1.1rem)]">
                       {slide.personProdText}
