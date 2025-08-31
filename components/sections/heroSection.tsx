@@ -116,7 +116,7 @@ const HeroSection = () => {
                     height={400}
                     className="relative z-10 w-[clamp(9rem,22vw,16rem)] object-contain"
                   />
-                  <p className={`${caveat.className} absolute bottom-0 left-0 mt-2 font-medium text-[#B4F1D4] z-20 text-[clamp(1rem,4vw,2.5rem)]`}>
+                  <p className={`${caveat.className} absolute bottom-0 right-0 mt-2 font-medium text-[#B4F1D4] z-20 text-[clamp(1rem,4vw,2.5rem)]`}>
                     {slide.personName}
                   </p>
                 </div>
@@ -153,13 +153,13 @@ const HeroSection = () => {
         onClick={showPrevSlide}
         className="absolute top-1/2 -translate-y-1/2 left-2 sm:left-3 p-1 sm:p-2 bg-white/70 rounded-full hover:bg-white"
       >
-        <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-black" />
+        <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-[#FF0000]" />
       </button>
       <button
         onClick={showNextSlide}
         className="absolute top-1/2 -translate-y-1/2 right-2 sm:right-3 p-1 sm:p-2 bg-white/70 rounded-full hover:bg-white"
       >
-        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-black" />
+        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#FF0000]" />
       </button>
     </section>
   );
