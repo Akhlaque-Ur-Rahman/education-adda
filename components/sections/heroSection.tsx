@@ -2,7 +2,15 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { heroSlides } from "@/data/heroSection";
+import { Caveat } from "next/font/google";
+
+const caveat = Caveat({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-caveat',
+});
 
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(1); // 🚀 start at 1 (because of prepended clone)
@@ -32,11 +40,9 @@ const HeroSection = () => {
 
     const handleTransitionEnd = () => {
       if (currentIndex === extendedSlides.length - 1) {
-        // reached clone of first → jump back to real first
         setIsTransitioning(false);
         setCurrentIndex(1);
       } else if (currentIndex === 0) {
-        // reached clone of last → jump back to real last
         setIsTransitioning(false);
         setCurrentIndex(heroSlides.length);
       }
@@ -45,8 +51,9 @@ const HeroSection = () => {
     const slider = slideRef.current;
     slider?.addEventListener("transitionend", handleTransitionEnd);
 
-    return () => slider?.removeEventListener("transitionend", handleTransitionEnd);
-  }, [currentIndex, extendedSlides.length]);
+    return () =>
+      slider?.removeEventListener("transitionend", handleTransitionEnd);
+  }, [currentIndex, extendedSlides.length, isTransitioning]);
 
   return (
     <section className="relative overflow-hidden">
@@ -91,9 +98,10 @@ const HeroSection = () => {
             {/* Right content */}
             <div className="relative flex justify-center items-center w-full lg:w-1/2 mt-6 lg:mt-0">
               {/* SVG Background */}
-              <img
+              <Image
                 src="/svg/geometric-patter-1.svg"
                 alt="Background pattern"
+                fill
                 className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
               />
 
@@ -101,12 +109,14 @@ const HeroSection = () => {
               <div className="relative flex items-end -space-x-8">
                 {/* Person Image */}
                 <div className="flex flex-col items-center">
-                  <img
+                  <Image
                     src={slide.personImage}
                     alt={slide.personName}
+                    width={400}
+                    height={400}
                     className="relative z-10 w-[clamp(9rem,22vw,16rem)] object-contain"
                   />
-                  <p className="absolute bottom-0 left-0 mt-2 font-medium text-[#B4F1D4] z-20 font-caveat text-[clamp(1rem,4vw,2.5rem)]">
+                  <p className={`${caveat.className} absolute bottom-0 left-0 mt-2 font-medium text-[#B4F1D4] z-20 text-[clamp(1rem,4vw,2.5rem)]`}>
                     {slide.personName}
                   </p>
                 </div>
@@ -123,9 +133,11 @@ const HeroSection = () => {
                     </p>
                   </div>
                   <div className="bg-white flex-1 flex justify-center items-center">
-                    <img
+                    <Image
                       src="/svg/image-placeholder.svg"
                       alt="placeholder"
+                      width={200}
+                      height={200}
                       className="w-2/3"
                     />
                   </div>
