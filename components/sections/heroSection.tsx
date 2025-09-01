@@ -151,15 +151,15 @@ const HeroSection = () => {
       <div className="overlap-container 2xl:px-30 lg:px-[60px] hidden xl:block ">
         <div className="get-recommendation flex items-center bg-white lg:px-6 lg:py-4 rounded-[6px]">
             {GetRecomData.map((item, index) => (
-              <div key={index} className={`flex items-center  ${index === 0 ? ' gap-[10px] mr-[60px]' : 'gap-[5px]'}`}>
+              <div key={index} className={`flex items-center  ${index === 0 ? ' gap-[10px] mr-[60px]' : 'gap-[5px] rounded-[50px] bg-[#FFEEEE]  '}`}>
                 <Image
                   src={item.icon}
                   alt={item.title}
                   width={20}
                   height={20}
-                  className={` ${index === 0 ? 'size-5' : 'size-3'}`}
+                  className={` ${index === 0 ? 'size-5' : 'size-3 '}`}
                 />
-                <p className={` font-medium ${index === 0 ? 'text-[#FF0000] font-bold text-[14px]' : 'text-[#192839] text-[clamp(0.85rem,2vw,.75rem)] px-2'}`}>
+                <p className={` font-medium ${index === 0 ? 'text-[#192839] font-bold text-[14px]' : 'text-[#FF0000] text-[clamp(0.85rem,2vw,.75rem)] px-2'}`}>
                   {item.title}
                 </p>
               </div>

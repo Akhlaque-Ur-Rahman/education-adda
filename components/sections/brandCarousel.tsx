@@ -6,8 +6,9 @@ const brands = [
   "/svg/brands/brand1.svg",
   "/svg/brands/brand2.svg",
   "/svg/brands/brand3.svg",
+  "/svg/brands/jmi.svg",
   "/svg/brands/brand4.svg",
-  "/svg/brands/brand5.svg",
+  "/svg/brands/amu.svg",
   "/svg/brands/brand6.svg",
 ];
 
