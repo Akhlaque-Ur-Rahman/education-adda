@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 
 const brands = [
   "/svg/brands/brand1.svg",
@@ -58,10 +59,12 @@ export default function BrandCarousel() {
             key={idx}
             className="flex-shrink-0 w-20 sm:w-28 md:w-40 lg:w-56 flex items-center justify-center transition-transform duration-300"
           >
-            <img
+            <Image
               src={src}
               alt={`brand-${idx}`}
-              className="max-h-10 sm:max-h-12 md:max-h-14 lg:max-h-16 object-contain hover:cursor-pointer"
+              width={150} // adjust for your design
+              height={64}
+              className="object-contain cursor-pointer max-h-10 sm:max-h-12 md:max-h-14 lg:max-h-16"
             />
           </div>
         ))}

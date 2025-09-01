@@ -72,7 +72,7 @@ const HeroSection = () => {
             className="flex flex-col lg:flex-row w-full flex-shrink-0 px-4 sm:px-8 lg:px-[60px] 2xl:px-[120px] py-8 sm:py-10 lg:py-0 lg:items-center"
           >
             {/* Left content */}
-            <div className="flex flex-col items-center lg:items-start gap-2 lg:gap-6 w-full lg:w-1/2 text-center lg:text-left">
+            <div className="flex flex-col items-center lg:items-start gap-2 lg:gap-2.5 w-full lg:w-1/2 text-center lg:text-left">
               <h1 className="font-bold text-[#FF0000] text-[clamp(1.5rem,4vw,2.5rem)]">
                 {slide.title}
               </h1>
