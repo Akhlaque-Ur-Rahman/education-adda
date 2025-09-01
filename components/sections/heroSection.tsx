@@ -3,8 +3,9 @@ import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { heroSlides } from "@/data/heroSection";
+import { heroSlides, GetRecomData } from "@/data/heroSection";
 import { Caveat } from "next/font/google";
+import BrandoCarousel from "./brandCarousel";
 
 const caveat = Caveat({
   subsets: ['latin'],
@@ -116,7 +117,7 @@ const HeroSection = () => {
                     height={400}
                     className="relative z-10 w-[clamp(9rem,22vw,16rem)] object-contain"
                   />
-                  <p className={`${caveat.className} absolute bottom-0 right-0 mt-2 font-medium text-[#B4F1D4] z-20 text-[clamp(1rem,4vw,2.5rem)]`}>
+                  <p className={`${caveat.className} absolute bottom-0 right-0 mt-2 font-medium text-gray-700 z-20 text-[clamp(1rem,4vw,2.5rem)]`}>
                     {slide.personName}
                   </p>
                 </div>
@@ -147,6 +148,26 @@ const HeroSection = () => {
           </div>
         ))}
       </div>
+      <div className="overlap-container 2xl:px-30 lg:px-[60px] hidden xl:block ">
+        <div className="get-recommendation flex items-center bg-white lg:px-6 lg:py-4 rounded-[6px]">
+            {GetRecomData.map((item, index) => (
+              <div key={index} className={`flex items-center  ${index === 0 ? ' gap-[10px] mr-[60px]' : 'gap-[5px]'}`}>
+                <Image
+                  src={item.icon}
+                  alt={item.title}
+                  width={20}
+                  height={20}
+                  className={` ${index === 0 ? 'size-5' : 'size-3'}`}
+                />
+                <p className={` font-medium ${index === 0 ? 'text-[#FF0000] font-bold text-[14px]' : 'text-[#192839] text-[clamp(0.85rem,2vw,.75rem)] px-2'}`}>
+                  {item.title}
+                </p>
+              </div>
+            ))}
+          </div>
+
+      </div>
+      <BrandoCarousel/>
 
       {/* Navigation buttons */}
       <button

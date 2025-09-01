@@ -13,6 +13,47 @@ export interface SlideData {
   personPower : string;
   accentColor: 'red' | 'blue' | 'green' | 'purple' | 'orange';
 }
+export interface GetRecom{
+  title: string;
+  icon: string;
+  
+}
+export const GetRecomData: GetRecom[] = [
+  {
+    title: "Get Recommendations",
+    icon: "/svg/shine.svg",
+  },
+  {
+    
+    title: "Board Exam Courses",
+    icon: "/svg/courses.svg",
+  },
+  {
+    
+    title: "JMI Preparation",
+    icon: "/svg/jmi.svg",
+  },
+  {
+    
+    title: "AMU",
+    icon: "/svg/amu.svg",
+  },
+  {
+    
+    title: "Ask a Mentor",
+    icon: "/svg/ask-mentor.svg",
+  },
+  {
+    
+    title: "Skill Based Learning",
+    icon: "/svg/learning.svg",
+  },
+  {
+    
+    title: "Something else?",
+    icon: "/svg/edit.svg",
+  },
+]
 
 export const heroSlides: SlideData[] = [
   {
