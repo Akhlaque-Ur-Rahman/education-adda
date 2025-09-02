@@ -1,5 +1,6 @@
 import Navbar from '@/components/layout/Navbar'
 import HeroSection from '@/components/sections/heroSection'
+import WhyChooseUs from '@/components/sections/whyChooseUs'
 
 import React from 'react'
 
@@ -10,6 +11,7 @@ const Home = () => {
       <Navbar />
       <HeroSection/>
       </div>
+      <WhyChooseUs/>
      
     </div>
   )

@@ -5,12 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { heroSlides, GetRecomData } from "@/data/heroSection";
 import { Caveat } from "next/font/google";
-import BrandoCarousel from "./brandCarousel";
+import BrandoCarousel from "../layout/brandCarousel";
 
 const caveat = Caveat({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-caveat',
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-caveat",
 });
 
 const HeroSection = () => {
@@ -69,8 +69,20 @@ const HeroSection = () => {
         {extendedSlides.map((slide, idx) => (
           <div
             key={idx}
-            className="flex flex-col lg:flex-row w-full flex-shrink-0 px-4 sm:px-8 lg:px-[60px] 2xl:px-[120px] py-8 sm:py-10 lg:py-0 lg:items-center"
+            className="relative flex flex-col lg:flex-row w-full flex-shrink-0 px-4 sm:px-8 lg:px-[60px] 2xl:px-[120px] py-8 sm:py-10 lg:py-0 lg:items-center"
           >
+            <button
+              onClick={showPrevSlide}
+              className="absolute top-1/2 -translate-y-1/2 left-2 2xl:left-16 sm:left-3 p-1 sm:p-2 bg-white/70 rounded-full hover:bg-white hover:shadow-md transition duration-200 ease-in-out"
+            >
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-[#FF0000]" />
+            </button>
+            <button
+              onClick={showNextSlide}
+              className="absolute top-1/2 -translate-y-1/2 right-2 2xl:right-16 sm:right-3 p-1 sm:p-2 bg-white/70 rounded-full hover:bg-white hover:shadow-md transition duration-200 ease-in-out"
+            >
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#FF0000]" />
+            </button>
             {/* Left content */}
             <div className="flex flex-col items-center lg:items-start gap-2 lg:gap-2.5 w-full lg:w-1/2 text-center lg:text-left">
               <h1 className="font-bold text-[#FF0000] text-[clamp(1.5rem,4vw,2.5rem)]">
@@ -97,7 +109,7 @@ const HeroSection = () => {
             </div>
 
             {/* Right content */}
-            <div className="relative flex justify-center items-center w-full lg:w-1/2 mt-6 lg:mt-0">
+            <div className="relative flex justify-center lg:justify-start items-center w-full lg:w-1/2 mt-6 lg:mt-0">
               {/* SVG Background */}
               <Image
                 src="/svg/geometric-patter-1.svg"
@@ -109,15 +121,17 @@ const HeroSection = () => {
               {/* Person + Product card wrapper */}
               <div className="relative flex items-end -space-x-8">
                 {/* Person Image */}
-                <div className="flex flex-col items-center">
+                <div className="">
                   <Image
                     src={slide.personImage}
                     alt={slide.personName}
                     width={400}
                     height={400}
-                    className="relative z-10 w-[clamp(9rem,22vw,16rem)] object-contain"
+                    className="relative z-10 w-[clamp(9rem,22vw,19rem)] object-contain"
                   />
-                  <p className={`${caveat.className} absolute bottom-0 right-0 mt-2 font-medium text-gray-700 z-20 text-[clamp(1rem,4vw,2.5rem)]`}>
+                  <p
+                    className={`${caveat.className} absolute bottom-0 right-0 mt-2 font-medium text-gray-700 z-20 text-[clamp(1rem,4vw,2.5rem)]`}
+                  >
                     {slide.personName}
                   </p>
                 </div>
@@ -150,38 +164,38 @@ const HeroSection = () => {
       </div>
       <div className="overlap-container 2xl:px-30 lg:px-[60px] hidden xl:block ">
         <div className="get-recommendation flex items-center bg-white lg:px-6 lg:py-4 rounded-[6px]">
-            {GetRecomData.map((item, index) => (
-              <div key={index} className={`flex items-center  ${index === 0 ? ' gap-[10px] mr-[60px]' : 'gap-[5px] rounded-[50px] bg-[#FFEEEE]  '}`}>
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={20}
-                  height={20}
-                  className={` ${index === 0 ? 'size-5' : 'size-3 '}`}
-                />
-                <p className={` font-medium ${index === 0 ? 'text-[#192839] font-bold text-[14px]' : 'text-[#FF0000] text-[clamp(0.85rem,2vw,.75rem)] px-2'}`}>
-                  {item.title}
-                </p>
-              </div>
-            ))}
-          </div>
-
+          {GetRecomData.map((item, index) => (
+            <div
+              key={index}
+              className={`flex items-center  ${
+                index === 0
+                  ? " gap-[10px] mr-[60px]"
+                  : "gap-[5px] rounded-[50px] bg-[#FFEEEE]  "
+              }`}
+            >
+              <Image
+                src={item.icon}
+                alt={item.title}
+                width={20}
+                height={20}
+                className={` ${index === 0 ? "size-5" : "size-3 "}`}
+              />
+              <p
+                className={` font-medium ${
+                  index === 0
+                    ? "text-[#192839] font-bold text-[14px]"
+                    : "text-[#FF0000] text-[clamp(0.85rem,2vw,.75rem)] px-2"
+                }`}
+              >
+                {item.title}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
-      <BrandoCarousel/>
+      <BrandoCarousel />
 
       {/* Navigation buttons */}
-      <button
-        onClick={showPrevSlide}
-        className="absolute top-1/2 -translate-y-1/2 left-2 sm:left-3 p-1 sm:p-2 bg-white/70 rounded-full hover:bg-white"
-      >
-        <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-[#FF0000]" />
-      </button>
-      <button
-        onClick={showNextSlide}
-        className="absolute top-1/2 -translate-y-1/2 right-2 sm:right-3 p-1 sm:p-2 bg-white/70 rounded-full hover:bg-white"
-      >
-        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#FF0000]" />
-      </button>
     </section>
   );
 };
