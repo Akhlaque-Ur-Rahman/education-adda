@@ -127,7 +127,7 @@ const HeroSection = () => {
                     alt={slide.personName}
                     width={400}
                     height={400}
-                    className="relative z-10 w-[clamp(9rem,22vw,19rem)] object-contain"
+                    className="relative z-10 w-[clamp(9rem,22vw,21rem)] object-contain"
                   />
                   <p
                     className={`${caveat.className} absolute bottom-0 right-0 mt-2 font-medium text-gray-700 z-20 text-[clamp(1rem,4vw,2.5rem)]`}
