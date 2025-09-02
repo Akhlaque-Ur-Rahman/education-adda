@@ -40,6 +40,9 @@ const WhyChooseUs = () => {
             src="/images/transparent-bg.png"
             alt="whyChooseUs"
             fill
+            sizes="(max-width: 768px) 100vw, 
+            (max-width: 1200px) 50vw, 
+            50vw"
             className="object-cover"
             priority
           />
