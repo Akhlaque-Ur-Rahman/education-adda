@@ -37,4 +37,12 @@
   animation: scroll 20s linear infinite;
 }
   
+/* in globals.css or tailwind.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox */
+}
 

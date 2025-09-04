@@ -1,5 +1,6 @@
 import Navbar from '@/components/layout/Navbar'
 import HeroSection from '@/components/sections/heroSection'
+import ShowCase from '@/components/sections/showCase'
 import WhyChooseUs from '@/components/sections/whyChooseUs'
 
 import React from 'react'
@@ -12,7 +13,7 @@ const Home = () => {
       <HeroSection/>
       </div>
       <WhyChooseUs/>
-     
+      <ShowCase/>
     </div>
   )
 }
