@@ -121,8 +121,9 @@ const JoinCourses = () => {
   className="relative group bg-gray-100 rounded-[5px] flex items-end justify-center border border-gray-200 shadow-sm hover:shadow-lg min-h-[300px] sm:min-h-[340px] md:min-h-[360px] lg:min-h-[380px] xl:min-h-[400px] w-full"
   style={{
     backgroundImage: `url(${card.image})`,
-    backgroundSize: "cover",
+    backgroundSize: "contain",
     backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
   }}
   onClick={() => {
     if (window.innerWidth < 640) {
