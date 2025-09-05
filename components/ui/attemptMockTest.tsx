@@ -3,11 +3,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { mockTestsData, mockTestHeading } from "@/data/mockTestsData";
+import { WhyChoosUsProps } from "@/types/whyChoosUsProps";
 
-// 👉 You’ll need to create mockTestsData in "@/data/mockTestsData"
-import {mockTestsData,mockTestHeading}  from "@/data/mockTestsData";
 
-const AttemptMockTests = () => {
+const AttemptMockTests: React.FC<WhyChoosUsProps> = ({ number }) => {
   // Mobile state for expanding cards (tap-to-reveal)
   const [openCard, setOpenCard] = useState<number | null>(null);
 
@@ -15,9 +15,14 @@ const AttemptMockTests = () => {
 
   return (
     <section className="px-2 lg:px-[60px] py-10 bg-white rounded-[5px]">
-      <h2 className="text-[32px] font-bold text-[#192839] mb-[15px] text-left">
-        {mockTestHeading.heading}
-      </h2>
+      <div>
+        {number && (
+          <span className="text-gray-500 mr-2 lg:hidden block">{number}</span>
+        )}
+        <h2 className="text-[32px] font-bold text-[#192839] mb-[15px] text-left">
+          {mockTestHeading.heading}
+        </h2>
+      </div>
 
       {/* Cards */}
       <motion.div

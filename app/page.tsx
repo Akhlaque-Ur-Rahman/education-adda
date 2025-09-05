@@ -3,6 +3,7 @@ import HeroSection from '@/components/sections/heroSection'
 import ShowCase from '@/components/sections/showCase'
 import WhyChooseUs from '@/components/sections/whyChooseUs'
 
+
 import React from 'react'
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       </div>
       <WhyChooseUs/>
       <ShowCase/>
+      
     </div>
   )
 }

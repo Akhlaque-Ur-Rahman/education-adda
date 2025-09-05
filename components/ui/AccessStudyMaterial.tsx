@@ -2,18 +2,27 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { WhyChoosUsProps } from "@/types/whyChoosUsProps";
 import Link from "next/link";
-import { accessStudyMaterialData, accessStudyMaterialHeading } from "@/data/accessStudyMaterialData"; // 👉 import dataset
+import {
+  accessStudyMaterialData,
+  accessStudyMaterialHeading,
+} from "@/data/accessStudyMaterialData"; // 👉 import dataset
 
-const AccessStudyMaterial = () => {
+const AccessStudyMaterial: React.FC<WhyChoosUsProps> = ({ number }) => {
   const [openCard, setOpenCard] = useState<number | null>(null);
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   return (
     <section className="px-2 lg:px-[60px] py-10 bg-white rounded-[5px]">
-      <h2 className="text-[32px] font-bold text-[#192839] mb-[15px] text-left">
-        {accessStudyMaterialHeading.heading}
-      </h2>
+      <div>
+        {number && (
+          <span className="text-gray-500 mr-2 lg:hidden block">{number}</span>
+        )}
+        <h2 className="text-[32px] font-bold text-[#192839] mb-[15px] text-left">
+          {accessStudyMaterialHeading.heading}
+        </h2>
+      </div>
 
       {/* Cards */}
       <motion.div

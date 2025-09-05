@@ -21,7 +21,7 @@ export const coursesData: CourseTab[] = [
       },
       {
         "title": "Study Notes & PDFs",
-        "description": "Download topic-wise notes instantly.",
+        "description": "Easily Download topic-wise notes in PDFs instantly.",
         "image": "/images/classroom.jpg",
         "ctaPrimary": "Get Notes",
         "ctaSecondary": "Preview"
@@ -35,7 +35,7 @@ export const coursesData: CourseTab[] = [
       },
       {
         "title": "Doubt Solving",
-        "description": "Real-time doubt clearance by expert mentors.",
+        "description": "Real-time doubt resolve by expert mentors at anytime.",
         "image": "/images/classroom.jpg",
         "ctaPrimary": "Ask Doubt",
         "ctaSecondary": "Chat Now"
