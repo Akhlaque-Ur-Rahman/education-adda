@@ -1,14 +1,11 @@
-export interface CourseCard {
-  title: string
-  description: string
-  image?: string
-  ctaPrimary?: string
-  ctaSecondary?: string
-}
+import { Card } from "@/types/card";
 
 export interface CourseTab {
   name: string
-  cards: CourseCard[]
+  cards: Card[]
+}
+export const joinCourseHeading={
+  heading:"Join Courses"
 }
 
 export const coursesData: CourseTab[] = [
