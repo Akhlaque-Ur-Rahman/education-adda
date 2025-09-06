@@ -32,7 +32,7 @@ const WhyChooseUs = () => {
 
         {/* Left Card */}
         <div
-          className="left-card bg-[#FF0000] text-white flex flex-col justify-center p-6 lg:rounded-tr-[40px] lg:rounded-bl-[40px] xl:flex-shrink-0 h-full w-full lg:max-w-[550px]"
+          className="left-card bg-[#FF0000] text-white flex lg:flex-col flex-row justify-between lg:justify-center p-6 lg:rounded-tr-[40px] lg:rounded-bl-[40px] xl:flex-shrink-0 h-full w-full lg:max-w-[550px] gap-9"
           
         >
           <h2
@@ -46,8 +46,8 @@ const WhyChooseUs = () => {
             
           </h2>
 
-          <div className="btn-container border-t-2 border-white mt-6 pt-6">
-            <button className="rounded-[16px] px-[30px] py-[20px] bg-white text-[#FF0000] font-semibold">
+          <div className="btn-container lg:border-t-2 border-white lg:mt-6 pt-6 self-end">
+            <button className="rounded-[16px] px-2.5 py-2 lg:px-[30px] lg:py-[20px] bg-white text-[#FF0000] font-semibold ">
               Explore Courses
             </button>
           </div>
