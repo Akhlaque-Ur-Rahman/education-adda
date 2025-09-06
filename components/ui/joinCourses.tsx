@@ -8,11 +8,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Mousewheel } from "swiper/modules";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/mousewheel";
-import Image from "next/image";
+
 
 const JoinCourses: React.FC<WhyChoosUsProps> = ({ number }) => {
   const [activeTab, setActiveTab] = useState(0);
@@ -20,28 +20,33 @@ const JoinCourses: React.FC<WhyChoosUsProps> = ({ number }) => {
   const [openCard, setOpenCard] = useState<number | null>(null);
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
-  type Props = { number: string };
+  
 
   return (
-    <section className=" lg:px-[60px] py-10 bg-white rounded-[5px]">
+    <section className=" lg:px-[60px] py-10 bg-white rounded-[5px] ">
       <div className="bg-[#203553] lg:bg-white flex justify-between items-center">
-        <div className="lg:bg-white pt-8 pb-8 pr-5 pl-0 flex flex-col justify-between gap-2.5 mb-2">
-          {number && (
-          <span className="text-gray-400 lg:hidden block font-sans">{number}</span>
-        )}
-        <h2 className="text-[32px] font-bold text-white lg:text-[#192839] text-left">
-          {joinCourseHeading.heading}
-        </h2>
-        </div>
-        <img
-          src="/svg/abstract2-white.svg"
-          alt="Decorative Image"
-          className="lg:hidden block h-full w-auto"
-        />
-      </div>
+  <div className="lg:bg-white pt-8 pb-8 pr-5 pl-0 flex flex-col justify-between gap-2.5 mb-2">
+    {number && (
+      <span className="text-gray-400 lg:hidden block font-sans">{number}</span>
+    )}
+    <h2 className="text-[32px] font-bold text-white lg:text-[#192839] text-left">
+      {joinCourseHeading.heading}
+    </h2>
+  </div>
+
+  <div className="relative lg:hidden block h-full w-auto">
+    <Image
+      src="/svg/abstract2-white.svg"
+      alt="Decorative Image"
+      fill
+      className="object-contain"
+      priority
+    />
+  </div>
+</div>
 
       {/* Mobile Dropdown */}
-      <div className="sm:hidden relative mb-4">
+      <div className="sm:hidden relative my-4">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="w-full flex items-center justify-between border-[.5px] border-gray-400 rounded-sm px-2 py-2 text-sm bg-white shadow-sm"

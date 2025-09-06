@@ -10,8 +10,8 @@ const WhyChooseUs = () => {
 } as const
 
   return (
-    <section className="why-choose-us p-2 lg:p-[60px] bg-[#F5EDED] w-full flex flex-col items-center justify-center">
-      <div className="cta-container flex flex-col lg:flex-row lg:items-center  w-full lg:h-[380px] relative 2xl:px-[60px] ">
+    <section className="why-choose-us  bg-[#F5EDED] w-full flex flex-col items-center justify-center">
+      <div className="cta-container  flex flex-col lg:flex-row lg:items-center  w-full lg:h-[380px] relative 2xl:px-[60px] ">
          {/* Decorative Triangles */}
         <Image
           src="/svg/triangle-right.svg"
@@ -46,11 +46,11 @@ const WhyChooseUs = () => {
             
           </h2>
 
-          <div className="btn-container lg:border-t-2 border-white lg:mt-6 pt-6 self-end">
-            <button className="rounded-[6px] lg:rounded-[16px] px-2.5 py-2 lg:px-[30px] lg:py-[20px] bg-white text-[#FF0000] font-semibold text-nowrap" 
+          <div className="btn-container lg:border-t-2 border-white pt-6 self-center w-full">
+            <button className="rounded-[6px] lg:rounded-[16px] px-2.5 py-1.5  lg:px-[30px] lg:py-[20px] bg-white text-[#FF0000] font-semibold text-nowrap" 
             style={{
-                      fontSize: "clamp(10px, 1.8vw, 14px)",
-                      padding: "clamp(8px, 1vw, 6px) clamp(10px, 2vw, 14px)",
+                      fontSize: "clamp(12px, 1.8vw, 14px)",
+                      // padding: "clamp(10px, 1vw, 6px) lg:clamp(10px, 2vw, 14px)",
                     }}
             >
               Explore Courses
@@ -74,19 +74,19 @@ const WhyChooseUs = () => {
 
     priority
   />
-</div>
+      </div>
 
       </div>
-      <div className="featured-headline-container px-4 py-2 2xl:px-[60px] lg:py-[32px] w-full gap-[10px] flex flex-col">
+      <div className="featured-headline-container py-2 2xl:px-[60px] lg:py-[32px] w-full gap-[10px] flex flex-col">
         <h2 className='text-[#192839] text-[56px] leading-tight text-left' style={{ fontSize: "clamp(32px, 6vw, 56px)" }}>
           {whyChooseUsData.headlineBlock.headline}
         </h2>
-        <div className="featured-container py-1 lg:py-[10px] hidden  2xl:flex  xl:flex-row xl:items-center gap-[15px] w-full">
-          <div className="subtitle-text-container pr-[15px] border-r-2 border-[#40566D]">
+        <div className="featured-container py-1 lg:py-[10px] flex  xl:flex-row xl:items-center gap-[15px] w-full">
+          <div className="subtitle-text-container pr-[15px] xl:border-r-2 xl:border-[#40566D]">
             <p className='text-[#40566D]'>{whyChooseUsData.headlineBlock.subText}</p>
           </div>
           {whyChooseUsData.features.map((feature, index) => (
-            <h3 key={index} className="text-[#192839] font-semibold">
+            <h3 key={index} className="text-[#192839] font-semibold hidden  xl:flex ">
               {feature}
             </h3>
           ))}

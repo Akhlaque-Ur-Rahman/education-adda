@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { mockTestsData, mockTestHeading } from "@/data/mockTestsData";
 import { WhyChoosUsProps } from "@/types/whyChoosUsProps";
+import Image from "next/image";
 
 
 const AttemptMockTests: React.FC<WhyChoosUsProps> = ({ number }) => {
@@ -14,22 +15,30 @@ const AttemptMockTests: React.FC<WhyChoosUsProps> = ({ number }) => {
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   return (
-    <section className="px-2 lg:px-[60px] py-10 bg-white rounded-[5px]">
-      <div className="bg-[#203553] lg:bg-white flex justify-between items-center">
-              <div className="lg:bg-white pt-8 pb-8 pr-5 pl-0 flex flex-col justify-between gap-2.5 mb-2">
-                {number && (
-                <span className="text-gray-400 lg:hidden block font-sans">{number}</span>
-              )}
-              <h2 className="text-[32px] font-bold text-white lg:text-[#192839] text-left">
-                {mockTestHeading.heading}
-              </h2>
-              </div>
-              <img
-                src="/svg/abstract2-white.svg"
-                alt="Decorative Image"
-                className="lg:hidden block h-full w-auto"
-              />
-            </div>
+    <section className="lg:px-[60px] py-10 bg-white rounded-[5px]">
+      
+
+<div className="bg-[#203553] lg:bg-white flex justify-between items-center">
+  <div className="lg:bg-white pt-8 pb-8 pr-5 pl-0 flex flex-col justify-between gap-2.5 mb-2">
+    {number && (
+      <span className="text-gray-400 lg:hidden block font-sans">{number}</span>
+    )}
+    <h2 className="text-[32px] font-bold text-white lg:text-[#192839] text-left">
+      {mockTestHeading.heading}
+    </h2>
+  </div>
+
+  <div className="relative lg:hidden block h-full w-auto">
+    <Image
+      src="/svg/abstract2-white.svg"
+      alt="Decorative Image"
+      fill
+      className="object-contain"
+      priority
+    />
+  </div>
+</div>
+
 
       {/* Cards */}
       <motion.div
