@@ -10,7 +10,7 @@ const WhyChooseUs = () => {
 } as const
 
   return (
-    <section className="why-choose-us p-[60px] bg-[#F5EDED] w-full flex flex-col items-center justify-center">
+    <section className="why-choose-us p-2 lg:p-[60px] bg-[#F5EDED] w-full flex flex-col items-center justify-center">
       <div className="cta-container flex flex-col lg:flex-row lg:items-center  w-full lg:h-[380px] relative 2xl:px-[60px] ">
          {/* Decorative Triangles */}
         <Image
@@ -47,7 +47,12 @@ const WhyChooseUs = () => {
           </h2>
 
           <div className="btn-container lg:border-t-2 border-white lg:mt-6 pt-6 self-end">
-            <button className="rounded-[16px] px-2.5 py-2 lg:px-[30px] lg:py-[20px] bg-white text-[#FF0000] font-semibold ">
+            <button className="rounded-[6px] lg:rounded-[16px] px-2.5 py-2 lg:px-[30px] lg:py-[20px] bg-white text-[#FF0000] font-semibold text-nowrap" 
+            style={{
+                      fontSize: "clamp(10px, 1.8vw, 14px)",
+                      padding: "clamp(8px, 1vw, 6px) clamp(10px, 2vw, 14px)",
+                    }}
+            >
               Explore Courses
             </button>
           </div>

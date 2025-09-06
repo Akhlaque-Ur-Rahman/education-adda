@@ -12,14 +12,21 @@ const ClearDoubts: React.FC<WhyChoosUsProps> = ({ number }) => {
 
   return (
     <section className="px-2 lg:px-[60px] py-10 bg-white rounded-[5px]">
-      <div className="bg-[#203553] lg:bg-white pt-8 pb-8 pr-5 pl-0 flex flex-col justify-between gap-2.5 mb-2">
-        {number && (
-          <span className="text-gray-400 mr-2 lg:hidden block font-sans">{number}</span>
-        )}
-        <h2 className="text-[32px] font-bold text-white lg:text-[#192839] text-left">
-          {clearDoubtsHeading.heading}
-        </h2>
-      </div>
+      <div className="bg-[#203553] lg:bg-white flex justify-between items-center">
+              <div className="lg:bg-white pt-8 pb-8 pr-5 pl-0 flex flex-col justify-between gap-2.5 mb-2">
+                {number && (
+                <span className="text-gray-400 lg:hidden block font-sans">{number}</span>
+              )}
+              <h2 className="text-[32px] font-bold text-white lg:text-[#192839] text-left">
+                {clearDoubtsHeading.heading}
+              </h2>
+              </div>
+              <img
+                src="/svg/abstract2-white.svg"
+                alt="Decorative Image"
+                className="lg:hidden block h-full w-auto"
+              />
+            </div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -88,8 +95,8 @@ const ClearDoubts: React.FC<WhyChoosUsProps> = ({ number }) => {
                   <button
                     className="bg-[#ff0000] text-[#FFF6F6] font-semibold rounded-[10px] cursor-pointer"
                     style={{
-                      fontSize: "clamp(12px, 1.8vw, 14px)",
-                      padding: "clamp(4px, 1vw, 10px) clamp(10px, 2vw, 14px)",
+                      fontSize: "clamp(10px, 1.8vw, 14px)",
+                      padding: "clamp(4px, 1vw, 6px) clamp(10px, 2vw, 14px)",
                     }}
                   >
                     {card.ctaPrimary}
