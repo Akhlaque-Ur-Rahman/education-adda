@@ -70,11 +70,11 @@ const Card = ({ i, Component, number, total, progress, range, targetScale }: Car
       <motion.div
         style={{
           scale,
-          top: `calc(-5vh + ${i * 25}px)`,
+          top: `calc(-2vh + ${i * 25}px)`,
         }}
         className="relative w-full flex justify-center"
       >
-        <div className="bg-white rounded-2xl shadow-xl w-[90%] lg:w-[85%] h-auto">
+        <div className="bg-white rounded-2xl shadow-xl w-[90%] lg:w-[95%] h-auto">
           <Component number={number} total={total} />
         </div>
       </motion.div>

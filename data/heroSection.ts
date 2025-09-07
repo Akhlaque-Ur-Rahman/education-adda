@@ -93,7 +93,7 @@ export const heroSlides: SlideData[] = [
     description: "Access lectures, notes & tests anytime on your device.",
     ctaText: "Join Now",
     secondaryText: "Explore",
-    personName: "Aisha Khan",
+    personName: "Alishaan Khan",
     personImage: "/images/Shadab.png",
     personPos: "Academic Head",
     personProdText: "Learning Portal",

@@ -25,7 +25,7 @@ const JoinCourses: React.FC<WhyChoosUsProps> = ({ number }) => {
   return (
     <section className=" lg:px-[60px] py-10 bg-white rounded-[5px] ">
       <div className="bg-[#203553] lg:bg-white flex justify-between items-center">
-  <div className="lg:bg-white pt-8 pb-8 pr-5 pl-0 flex flex-col justify-between gap-2.5 mb-2">
+  <div className="lg:bg-white lg:py-2.5 lg:px-0 pt-8 pb-8 pr-5 pl-0 flex flex-col justify-between gap-2.5 mb-2">
     {number && (
       <span className="text-gray-400 lg:hidden block font-sans">{number}</span>
     )}
