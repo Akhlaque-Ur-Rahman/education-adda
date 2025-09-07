@@ -1,7 +1,7 @@
 // Card.tsx
 "use client";
 import { useRef, useEffect, useState } from "react";
-import { motion,useTransform, motionValue, MotionValue } from "framer-motion";
+import { motion, useTransform, MotionValue } from "framer-motion";
 
 interface CardProps {
   i: number;
@@ -17,30 +17,28 @@ const Card = ({ i, Component, number, total, progress, range, targetScale }: Car
   const container = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check if device is mobile
+  // Detect mobile
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024); // lg breakpoint
+      setIsMobile(window.innerWidth < 1024);
     };
-    
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Scale based on scroll progress - adjusted for mobile
-  const scale = useTransform(
-    progress, 
-    range, 
-    isMobile ? [1, Math.max(targetScale, 0.95)] : [1, targetScale]
-  );
+  // ✅ Prevent scaling for the first card (i === 0)
+  const scale = i === 0 
+    ? 1 
+    : useTransform(
+        progress,
+        range,
+        isMobile ? [1, Math.max(targetScale, 0.95)] : [1, targetScale]
+      );
 
-  // For mobile, we'll use a simpler stacking approach
   const mobileOffset = isMobile ? i * 15 : i * 25;
 
   if (isMobile) {
-    // Mobile version with simplified animation
     return (
       <div
         ref={container}
@@ -49,7 +47,7 @@ const Card = ({ i, Component, number, total, progress, range, targetScale }: Car
         <motion.div
           style={{
             scale,
-            top: `calc(-2vh + ${mobileOffset}px)`, // Reduced offset for mobile
+            top: `calc(-2vh + ${mobileOffset}px)`,
           }}
           className="relative w-full flex justify-center"
         >
@@ -61,11 +59,11 @@ const Card = ({ i, Component, number, total, progress, range, targetScale }: Car
     );
   }
 
-  // Desktop version (original)
+  // Desktop
   return (
     <div
       ref={container}
-      className="h-screen flex items-center justify-center sticky top-0"
+      className="h-screen flex items-start justify-center sticky top-0"
     >
       <motion.div
         style={{
