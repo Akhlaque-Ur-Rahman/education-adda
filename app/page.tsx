@@ -15,6 +15,7 @@ const Home = () => {
       </div>
       <WhyChooseUs/>
       <ShowCase/>
+      
     </div>
   )
 }

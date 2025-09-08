@@ -22,16 +22,16 @@ const Card = ({ i, Component, number, total }: CardProps) => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Different sticky offset
-  const mobileOffset = isMobile ? i * 15 : i * 25;
+  // Sticky offset: complete overlap on mobile, stagger on desktop
+  const offset = isMobile ? 0 : i * 25;
 
   return (
     <div
       ref={container}
       className="h-screen w-full flex items-start justify-center sticky"
-      style={{ top: `calc(${isMobile ? "0px" : "0px"} + ${mobileOffset}px)` }}
+      style={{ top: `${offset}px`, zIndex: i + 1 }}
     >
-      <div className="bg-white rounded-2xl shadow-xl w-[90%] lg:w-[95%] h-auto border-[0.5px] border-gray-400">
+      <div className="bg-white rounded-2xl w-full lg:w-[95%] h-full lg:h-auto border-[0.5px] border-gray-400 shadow-sm">
         <Component number={number} total={total} />
       </div>
     </div>

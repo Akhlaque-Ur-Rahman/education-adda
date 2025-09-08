@@ -23,7 +23,7 @@ const JoinCourses: React.FC<WhyChoosUsProps> = ({ number }) => {
   
 
   return (
-    <section className=" lg:px-[60px] py-10 bg-white rounded-[5px] ">
+    <section className=" lg:px-[60px] lg:py-10 py-0 bg-white rounded-[5px] border-1 border-gray-300">
       <div className="bg-[#203553] lg:bg-white flex justify-between items-center">
   <div className="lg:bg-white lg:py-2.5 lg:px-0 pt-8 pb-8 pr-5 pl-0 flex flex-col justify-between gap-2.5 mb-2">
     {number && (
@@ -46,7 +46,7 @@ const JoinCourses: React.FC<WhyChoosUsProps> = ({ number }) => {
 </div>
 
       {/* Mobile Dropdown */}
-      <div className="sm:hidden relative my-4">
+      <div className="sm:hidden relative ">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="w-full flex items-center justify-between border-[.5px] border-gray-400 rounded-sm px-2 py-2 text-sm bg-white shadow-sm"
@@ -158,12 +158,8 @@ const JoinCourses: React.FC<WhyChoosUsProps> = ({ number }) => {
               {/* Heading & Description + CTA */}
               <div
                 className={
-                  "joine-courses-text-container h-full absolute top-3/4 left-0 bg-[#FFF6F6] p-2 xl:px-[20px] xl:py-[15px] xl:gap-2.5 w-full transition-all duration-500 " +
-                  (isMobile
-                    ? isExpanded
-                      ? "-translate-y-1/6" // show on tap
-                      : "translate-y-0" // default collapsed
-                    : "group-hover:-translate-y-1/6") // desktop hover
+                  "joine-courses-text-container h-full absolute top-3/4 left-0 bg-[#FFF6F6] p-2 xl:px-[20px] xl:py-[15px] xl:gap-2.5 w-full transition-all duration-500 -translate-y-1/5 xl:translate-y-0 xl:group-hover:-translate-y-1/6"
+                  
                 }
               >
                 <div className="lg:mb-5 mb-4">
@@ -182,15 +178,8 @@ const JoinCourses: React.FC<WhyChoosUsProps> = ({ number }) => {
                 </div>
 
                 <div
-                  className={
-                    "py-[10px] w-full flex justify-between items-center transition-all duration-500 ease-in-out " +
-                    (isMobile
-                      ? isExpanded
-                        ? "opacity-100"
-                        : "opacity-0"
-                      : "opacity-0 group-hover:opacity-100")
-                  }
-                >
+                  className=
+                    "py-[10px] w-full flex justify-between items-center transition-all duration-500 ease-in-out ">
                   <button
                     className="bg-[#ff0000] text-[#FFF6F6] font-semibold rounded-[10px] cursor-pointer"
                     style={{

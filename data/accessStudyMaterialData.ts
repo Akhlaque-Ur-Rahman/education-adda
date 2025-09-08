@@ -28,9 +28,9 @@ export const accessStudyMaterialData: Card[] = [
   },
   {
     title: "Solved Examples",
-    description: "Step-by-step solved problems for practice.",
+    description: "Step-by-step solved example problems for practice.",
     image: "/images/study-material.jpg",
-    ctaPrimary: "View Solutions",
+    ctaPrimary: "Solutions",
     ctaSecondary: "Check Examples",
   },
 ]
