@@ -1,6 +1,4 @@
-// / ShowCase.tsx
 "use client";
-import { useScroll } from "framer-motion";
 import { useRef } from "react";
 
 import JoinCourses from "../ui/joinCourses";
@@ -20,10 +18,6 @@ const Sections = [
 
 const ShowCase = () => {
   const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end end"],
-  });
 
   return (
     <section ref={container} className="relative bg-[#F5EDED] mt-14">
@@ -31,8 +25,6 @@ const ShowCase = () => {
         const Comp = step.Component;
         const number = String(index + 1).padStart(2, "0");
         const total = String(Sections.length).padStart(2, "0");
-        const range = [index * 0.25, 1];
-        const targetScale = 1 - (Sections.length - index) * 0.05;
 
         return (
           <Card
@@ -41,9 +33,6 @@ const ShowCase = () => {
             Component={Comp}
             number={number}
             total={total}
-            progress={scrollYProgress}
-            range={range}
-            targetScale={targetScale}
           />
         );
       })}

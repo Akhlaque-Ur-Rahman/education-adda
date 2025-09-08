@@ -38,7 +38,7 @@ export default function BrandCarousel() {
 
   return (
     <div
-      className="relative w-full overflow-hidden p-6 sm:p-10 md:p-[60px] "
+      className="relative w-full overflow-hidden p-8 sm:p-10 md:p-[60px] "
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onTouchStart={() => setPaused(true)}
@@ -64,7 +64,7 @@ export default function BrandCarousel() {
               alt={`brand-${idx}`}
               width={150} // adjust for your design
               height={64}
-              className="object-contain cursor-pointer max-h-10 sm:max-h-12 md:max-h-14 lg:max-h-16"
+              className="object-contain cursor-pointer max-h-15 sm:max-h-12 md:max-h-14 lg:max-h-16"
             />
           </div>
         ))}

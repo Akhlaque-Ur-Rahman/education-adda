@@ -11,7 +11,7 @@ const WhyChooseUs = () => {
 
   return (
     <section className="why-choose-us  bg-[#F5EDED] w-full flex flex-col items-center justify-center xl:px-[60px]">
-      <div className="cta-container  flex flex-col lg:flex-row lg:items-center  w-full lg:h-[380px] relative lg:px-[60px] ">
+      <div className="cta-container  flex flex-col lg:flex-row lg:items-center  w-full lg:h-[380px] relative px-4 lg:px-[60px] ">
          {/* Decorative Triangles */}
         <Image
           src="/svg/triangle-right.svg"
@@ -46,7 +46,7 @@ const WhyChooseUs = () => {
             
           </h2>
 
-          <div className="btn-container lg:border-t-2 border-white pt-6 self-center w-full">
+          <div className="btn-container lg:border-t-2 border-white pt-6 self-center mx-auto lg:w-full">
             <button className="rounded-[6px] lg:rounded-[16px] px-2.5 py-1.5  lg:px-[30px] lg:py-[20px] bg-white text-[#FF0000] font-semibold text-nowrap" 
             style={{
                       fontSize: "clamp(12px, 1.8vw, 14px)",

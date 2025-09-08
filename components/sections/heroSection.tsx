@@ -145,7 +145,7 @@ const HeroSection = () => {
         {extendedSlides.map((slide, idx) => (
           <div
             key={idx}
-            className="relative flex flex-col lg:flex-row w-full flex-shrink-0 px-4 sm:px-8 lg:px-[60px] 2xl:px-[120px] py-8 sm:py-10 lg:py-0 lg:items-center"
+            className="relative flex flex-col lg:flex-row w-full flex-shrink-0 px-4 lg:px-[60px] 2xl:px-[120px] py-8 sm:py-10 lg:py-0 lg:items-center overflow-hidden"
           >
             {/* Arrow buttons - hidden on mobile, visible on desktop */}
             <button
@@ -204,7 +204,8 @@ const HeroSection = () => {
                     alt={slide.personName}
                     width={400}
                     height={400}
-                    className="relative z-10 w-[clamp(14.5rem,22vw,21rem)] object-contain"
+                    className="relative z-10 w-[25rem] lg:w-[21rem] object-contain"
+                    // className="relative z-10 w-[clamp(25rem,22vw,21rem)] object-contain"
                   />
                   <p
                     className={`${caveat.className} absolute bottom-0 left-0 lg:left-1/2 0 mt-2 font-medium text-gray-700 z-20 text-[clamp(2rem,4vw,2.5rem)]`}
@@ -213,7 +214,7 @@ const HeroSection = () => {
                   </p>
                 </div>
 
-                <div className="relative w-[clamp(11rem,20vw,18rem)] aspect-[4/5] rounded-sm  overflow-hidden shadow-lg flex flex-col justify-between z-1 lg:self-center self-center left-1/6 lg:left-0">
+                <div className="relative w-[clamp(16rem,20vw,17rem)] aspect-[4/5] rounded-sm  overflow-hidden shadow-lg flex flex-col justify-between z-1 lg:self-center self-center left-1/6 lg:left-0">
                   <div className="px-2 sm:px-3 py-2 bg-gray-700">
                     <h1 className="text-white font-bold text-center text-[clamp(0.8rem,1.4vw,1.1rem)]">
                       {slide.personProdText}
