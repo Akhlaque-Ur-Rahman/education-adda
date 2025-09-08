@@ -63,14 +63,14 @@ const Card = ({ i, Component, number, total, progress, range, targetScale }: Car
   return (
     <div
       ref={container}
-      className="h-screen flex items-start justify-center sticky top-0"
+      className="h-screen w-full flex items-start xl:px-[120px] sticky top-0"
     >
       <motion.div
         style={{
           scale,
           top: `calc(-2vh + ${i * 25}px)`,
         }}
-        className="relative w-full flex justify-center"
+        className="relative w-full flex "
       >
         <div className="bg-white rounded-2xl shadow-xl w-[90%] lg:w-[95%] h-auto">
           <Component number={number} total={total} />

@@ -10,8 +10,8 @@ const WhyChooseUs = () => {
 } as const
 
   return (
-    <section className="why-choose-us  bg-[#F5EDED] w-full flex flex-col items-center justify-center">
-      <div className="cta-container  flex flex-col lg:flex-row lg:items-center  w-full lg:h-[380px] relative 2xl:px-[60px] ">
+    <section className="why-choose-us  bg-[#F5EDED] w-full flex flex-col items-center justify-center xl:px-[60px]">
+      <div className="cta-container  flex flex-col lg:flex-row lg:items-center  w-full lg:h-[380px] relative lg:px-[60px] ">
          {/* Decorative Triangles */}
         <Image
           src="/svg/triangle-right.svg"
